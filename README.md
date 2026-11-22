@@ -16,9 +16,9 @@
 
 ## ⚡ About
 
-I build scalable, high-performance digital products with a strong focus on full-stack engineering, product thinking, and real-world problem solving.
+I build scalable, high-performance web applications and help shape products from problem definition to delivery.
 
-Currently in my final year of **B.Tech (CSE - AI & ML)**, I specialize in **React.js, Next.js, and TypeScript**, with hands-on full-stack experience across the MERN stack and modern backend technologies.
+Currently in my final year of **B.Tech (CSE - AI & ML)**, I work across **React.js, Next.js, TypeScript, and the MERN stack**, combining engineering execution with product thinking.
 
 ## 🎮 Portfolio Highlights
 
@@ -43,7 +43,7 @@ Currently in my final year of **B.Tech (CSE - AI & ML)**, I specialize in **Reac
 
 ## 🛠️ Tech Stack
 
-**Product delivery:** React.js · Next.js · TypeScript · JavaScript · Tailwind CSS · Zustand · Framer Motion  
+**Frontend:** React.js · Next.js · TypeScript · JavaScript · Tailwind CSS · Zustand · Framer Motion  
 **Backend:** Node.js · Express.js · WebSockets · FastAPI · REST APIs · JWT  
 **Data & Tools:** MongoDB · PostgreSQL · Docker · Git  
 **Core CS:** DBMS · Operating Systems · Computer Networks · OOP · Data Structures & Algorithms
