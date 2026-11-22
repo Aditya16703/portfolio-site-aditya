@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:11140f,100:c8ff3d&height=220&section=header&text=Aditya%20Singh%20Chauhan&fontSize=46&fontColor=f2f0df&fontAlignY=38&desc=Full-Stack%20Developer%20%26%20Product%20Manager&descAlignY=60&descSize=18&descColor=c8ff3d" width="100%" alt="Aditya Singh Chauhan portfolio banner">
+<img src="./assets/portfolio-banner.svg" width="100%" alt="Aditya Singh Chauhan - Full-Stack Developer and Product Manager">
 
 <p>
-  <a href="https://github.com/Aditya16703/portfolio-site-aditya"><img src="https://img.shields.io/badge/Portfolio-Source-c8ff3d?style=for-the-badge&logo=github&logoColor=11140f" alt="Portfolio source"></a>
+  <a href="https://aditya16703.github.io/portfolio-site-aditya/"><img src="https://img.shields.io/badge/View%20Portfolio-c8ff3d?style=for-the-badge&logo=googlechrome&logoColor=11140f" alt="View live portfolio"></a>
   <a href="https://github.com/Aditya16703"><img src="https://img.shields.io/badge/GitHub-Aditya16703-181717?style=for-the-badge&logo=github" alt="GitHub profile"></a>
   <a href="https://www.linkedin.com/in/aditya-singh-chauhan-68a44230a/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn profile"></a>
 </p>
