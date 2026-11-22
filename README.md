@@ -6,6 +6,8 @@
   <a href="https://aditya16703.github.io/portfolio-site-aditya/"><img src="https://img.shields.io/badge/View%20Portfolio-c8ff3d?style=for-the-badge&logo=googlechrome&logoColor=11140f" alt="View live portfolio"></a>
   <a href="https://github.com/Aditya16703"><img src="https://img.shields.io/badge/GitHub-Aditya16703-181717?style=for-the-badge&logo=github" alt="GitHub profile"></a>
   <a href="https://www.linkedin.com/in/aditya-singh-chauhan-68a44230a/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="https://leetcode.com/u/Adityasinghchauhan16/"><img src="https://img.shields.io/badge/LeetCode-Adityasinghchauhan16-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode profile"></a>
+  <a href="https://www.codechef.com/users/ac3413452"><img src="https://img.shields.io/badge/CodeChef-ac3413452-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef profile"></a>
 </p>
 
 <p>
@@ -78,6 +80,8 @@ portfolio-site-aditya/
 
 - **GitHub:** [github.com/Aditya16703](https://github.com/Aditya16703)
 - **LinkedIn:** [Aditya Singh Chauhan](https://www.linkedin.com/in/aditya-singh-chauhan-68a44230a/)
+- **LeetCode:** [Adityasinghchauhan16](https://leetcode.com/u/Adityasinghchauhan16/)
+- **CodeChef:** [ac3413452](https://www.codechef.com/users/ac3413452)
 - **Email:** [ac3413452@gmail.com](mailto:ac3413452@gmail.com)
 
 <div align="center">
