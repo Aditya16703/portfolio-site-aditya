@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:11140f,100:c8ff3d&height=220&section=header&text=Aditya%20Singh%20Chauhan&fontSize=46&fontColor=f2f0df&fontAlignY=38&desc=Frontend%20%26%20Full-Stack%20Developer&descAlignY=60&descSize=18&descColor=c8ff3d" width="100%" alt="Aditya Singh Chauhan portfolio banner">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:11140f,100:c8ff3d&height=220&section=header&text=Aditya%20Singh%20Chauhan&fontSize=46&fontColor=f2f0df&fontAlignY=38&desc=Full-Stack%20Developer%20%26%20Product%20Manager&descAlignY=60&descSize=18&descColor=c8ff3d" width="100%" alt="Aditya Singh Chauhan portfolio banner">
 
 <p>
   <a href="https://github.com/Aditya16703/portfolio-site-aditya"><img src="https://img.shields.io/badge/Portfolio-Source-c8ff3d?style=for-the-badge&logo=github&logoColor=11140f" alt="Portfolio source"></a>
@@ -16,7 +16,7 @@
 
 ## ⚡ About
 
-I build scalable, high-performance web applications with a strong focus on frontend engineering and real-world problem solving.
+I build scalable, high-performance digital products with a strong focus on full-stack engineering, product thinking, and real-world problem solving.
 
 Currently in my final year of **B.Tech (CSE - AI & ML)**, I specialize in **React.js, Next.js, and TypeScript**, with hands-on full-stack experience across the MERN stack and modern backend technologies.
 
@@ -43,7 +43,7 @@ Currently in my final year of **B.Tech (CSE - AI & ML)**, I specialize in **Reac
 
 ## 🛠️ Tech Stack
 
-**Frontend:** React.js · Next.js · TypeScript · JavaScript · Tailwind CSS · Zustand · Framer Motion  
+**Product delivery:** React.js · Next.js · TypeScript · JavaScript · Tailwind CSS · Zustand · Framer Motion  
 **Backend:** Node.js · Express.js · WebSockets · FastAPI · REST APIs · JWT  
 **Data & Tools:** MongoDB · PostgreSQL · Docker · Git  
 **Core CS:** DBMS · Operating Systems · Computer Networks · OOP · Data Structures & Algorithms
@@ -83,7 +83,7 @@ portfolio-site-aditya/
 
 <br>
 
-**Open to Frontend and Full-Stack Development opportunities.**
+**Open to Full-Stack Development and Product Management opportunities.**
 
 <br><br>
 
