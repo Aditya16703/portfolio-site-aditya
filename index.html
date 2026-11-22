@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11140f">
+  <meta name="description" content="Aditya Singh Chauhan — frontend and full-stack developer specializing in React, Next.js, TypeScript, and the MERN stack.">
+  <meta property="og:title" content="Aditya Singh Chauhan — Developer Portfolio">
+  <meta property="og:description" content="Frontend and full-stack developer building scalable, user-focused web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/153709294?v=4">
+  <meta name="author" content="Aditya Singh Chauhan">
+  <meta name="keywords" content="Aditya Singh Chauhan, frontend developer, full-stack developer, React, Next.js, MERN, TypeScript">
+  <link rel="canonical" href="https://github.com/Aditya16703">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c8ff3d'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='34' font-weight='900' fill='%2311140f'%3EA%3C/text%3E%3C/svg%3E">
+  <title>Aditya Singh Chauhan — Player 16703</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #11140f;
+      --panel: #191c17;
+      --panel-2: #20241d;
+      --cream: #f2f0df;
+      --muted: #aaaF9e;
+      --lime: #c8ff3d;
+      --lime-dark: #779c20;
+      --orange: #ff7043;
+      --cyan: #61d9ff;
+      --line: rgba(242, 240, 223, 0.13);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        linear-gradient(rgba(200, 255, 61, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 255, 61, 0.025) 1px, transparent 1px),
+        var(--ink);
+      background-size: 44px 44px;
+      color: var(--cream);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 84% 12%, rgba(200, 255, 61, 0.09), transparent 22rem),
+        radial-gradient(circle at 10% 72%, rgba(97, 217, 255, 0.06), transparent 24rem);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .hud {
+      position: relative;
+      min-height: 94px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .status,
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 16px var(--lime);
+    }
+
+    .player-tag {
+      min-width: 156px;
+      padding: 8px 18px 7px;
+      border: 1px solid var(--line);
+      background: rgba(17, 20, 15, 0.82);
+      text-align: center;
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+    }
+
+    .location {
+      justify-content: flex-end;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 42px;
+      padding: 52px 0 44px;
+    }
+
+    .identity {
+      position: relative;
+      min-height: 318px;
+      animation: hero-enter 900ms cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    @keyframes hero-enter {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .identity::before {
+      content: "16703";
+      position: absolute;
+      right: -20px;
+      bottom: -24px;
+      z-index: -1;
+      color: rgba(242, 240, 223, 0.025);
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 152px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 13px;
+      color: var(--lime);
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--lime);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: Impact, "Arial Black", "Segoe UI", sans-serif;
+      font-size: clamp(64px, 8.3vw, 112px);
+      font-weight: 900;
+      line-height: 0.86;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    h1 .outline {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--cream);
+    }
+
+    .role-line {
+      max-width: 590px;
+      margin: 23px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .role-line strong {
+      color: var(--cream);
+    }
+
+    .intro-stack {
+      max-width: 590px;
+      margin: 14px 0 0;
+      color: var(--lime);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.7;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .action {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 17px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--cream);
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .action.primary {
+      border-color: var(--lime);
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .action:hover {
+      transform: translateY(-3px);
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .action.primary:hover {
+      background: var(--lime);
+    }
+
+    .action.linkedin {
+      border-color: rgba(97, 217, 255, 0.42);
+    }
+
+    .action.linkedin:hover {
+      background: var(--cyan);
+      color: var(--ink);
+    }
+
+    .profile-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      clip-path: polygon(0 0, calc(100% - 42px) 0, 100% 42px, 100% 100%, 0 100%);
+      transform-style: preserve-3d;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--mx, 72%) var(--my, 24%), rgba(200, 255, 61, 0.16), transparent 24%);
+      opacity: 0.7;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      right: -10%;
+      bottom: -28%;
+      width: 330px;
+      height: 330px;
+      border: 58px solid rgba(200, 255, 61, 0.08);
+      border-radius: 50%;
+    }
+
+    .profile-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.55;
+      background:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(135deg, transparent 16%, #000 72%);
+    }
+
+    .avatar {
+      position: absolute;
+      right: 30px;
+      bottom: 0;
+      z-index: 2;
+      width: 248px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 15%;
+      filter: grayscale(100%) contrast(1.12);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+    }
+
+    .level-block {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      z-index: 3;
+    }
+
+    .level-label {
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .level {
+      display: block;
+      margin-top: 2px;
+      color: var(--lime);
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 82px;
+      line-height: 0.9;
+    }
+
+    .xp {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      z-index: 4;
+    }
+
+    .xp-label {
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .xp-bar {
+      width: 156px;
+      height: 6px;
+      margin-top: 8px;
+      background: rgba(242, 240, 223, 0.12);
+    }
+
+    .xp-bar span {
+      display: block;
+      width: 78%;
+      height: 100%;
+      background: var(--lime);
+      box-shadow: 0 0 12px rgba(200, 255, 61, 0.55);
+    }
+
+    .profile-stats {
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      z-index: 6;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(72px, 1fr));
+      gap: 8px;
+      width: 190px;
+    }
+
+    .profile-stat {
+      min-height: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      background: rgba(17, 20, 15, 0.88);
+    }
+
+    .profile-stat strong {
+      color: var(--lime);
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .profile-stat span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 8px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin: 10px 0 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .section-title span {
+      color: var(--lime);
+    }
+
+    .section-index {
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      padding-bottom: 64px;
+    }
+
+    .project {
+      position: relative;
+      min-height: 200px;
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      text-decoration: none;
+      transform-style: preserve-3d;
+      transition: transform 220ms cubic-bezier(.2,.8,.2,1), border-color 220ms ease, background 220ms ease;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 22%, rgba(200, 255, 61, 0.09) 48%, transparent 72%);
+      transform: translateX(-130%);
+      transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    .project:hover::before {
+      transform: translateX(130%);
+    }
+
+    .project.featured {
+      grid-column: span 8;
+      background:
+        linear-gradient(90deg, rgba(200, 255, 61, 0.09), transparent 58%),
+        var(--panel);
+    }
+
+    .project.featured::after {
+      content: "01";
+      position: absolute;
+      right: 14px;
+      bottom: -30px;
+      color: rgba(200, 255, 61, 0.07);
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 130px;
+      line-height: 1;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: var(--lime);
+      background-color: var(--panel-2);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .project-code {
+      color: var(--lime);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 17px;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .project:hover .project-arrow {
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .project h2 {
+      position: relative;
+      z-index: 2;
+      margin: auto 0 7px;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .project.featured h2 {
+      font-size: clamp(34px, 4vw, 52px);
+    }
+
+    .project p {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .project-meta {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .project-links {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .project-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      color: var(--cream);
+      font-family: "Courier New", monospace;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .project-link.primary {
+      border-color: var(--lime);
+      color: var(--lime);
+    }
+
+    .project-link:hover {
+      border-color: var(--lime);
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer strong {
+      color: var(--lime);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-family: "Courier New", monospace;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--lime);
+    }
+
+    .project-preview {
+      position: relative;
+      height: 118px;
+      margin: -7px -7px 18px;
+      overflow: hidden;
+      border: 1px solid rgba(242, 240, 223, 0.09);
+      background:
+        linear-gradient(rgba(200, 255, 61, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 255, 61, 0.035) 1px, transparent 1px),
+        #11140f;
+      background-size: 18px 18px;
+    }
+
+    .project-preview::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 16px;
+      width: 44px;
+      height: 5px;
+      border-radius: 20px;
+      background: var(--lime);
+      box-shadow:
+        55px 0 0 rgba(242, 240, 223, 0.14),
+        76px 0 0 rgba(242, 240, 223, 0.14),
+        96px 0 0 rgba(242, 240, 223, 0.14);
+    }
+
+    .project-preview .preview-shell {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 12px;
+      height: 76px;
+      border: 1px solid rgba(242, 240, 223, 0.13);
+      background: rgba(32, 36, 29, 0.92);
+      transform: perspective(500px) rotateX(8deg);
+      transform-origin: bottom;
+    }
+
+    .preview-shell::before,
+    .preview-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 3px;
+    }
+
+    .preview-shell::before {
+      top: 12px;
+      left: 12px;
+      width: 24%;
+      height: 48px;
+      background:
+        linear-gradient(var(--lime), var(--lime)) 0 0 / 100% 5px no-repeat,
+        rgba(242, 240, 223, 0.08);
+    }
+
+    .preview-shell::after {
+      top: 12px;
+      right: 12px;
+      width: 62%;
+      height: 48px;
+      background:
+        linear-gradient(90deg, rgba(97, 217, 255, 0.55) 0 42%, transparent 42% 47%, rgba(200, 255, 61, 0.5) 47% 88%, transparent 88%),
+        repeating-linear-gradient(0deg, rgba(242, 240, 223, 0.08) 0 3px, transparent 3px 13px);
+    }
+
+    .project.featured .project-preview {
+      height: 145px;
+    }
+
+    .project.featured .preview-shell {
+      height: 102px;
+    }
+
+    .contribution-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 12px;
+      padding-bottom: 58px;
+    }
+
+    .contribution-card,
+    .github-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .contribution-card {
+      min-width: 0;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .contribution-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(0.7) brightness(1.08);
+    }
+
+    .github-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .github-card strong {
+      color: var(--lime);
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 56px;
+      line-height: 1;
+    }
+
+    .github-card p {
+      margin: 10px 0 18px;
+      color: var(--muted);
+    }
+
+    :where(a, button):focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .about-grid,
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      padding: 0 0 58px;
+    }
+
+    .about-copy,
+    .education-card,
+    .stack-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .about-copy {
+      grid-column: span 7;
+      padding: 28px;
+    }
+
+    .about-copy p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .about-copy strong {
+      color: var(--cream);
+    }
+
+    .education-card {
+      grid-column: span 5;
+      padding: 28px;
+    }
+
+    .data-label {
+      color: var(--lime);
+      font-family: "Courier New", monospace;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .education-card h3 {
+      margin: 13px 0 5px;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: 26px;
+      text-transform: uppercase;
+    }
+
+    .education-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .stack-card {
+      grid-column: span 3;
+      padding: 22px;
+    }
+
+    .stack-card h3 {
+      margin: 0 0 13px;
+      color: var(--cream);
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stack-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .profile-card {
+        min-height: 300px;
+      }
+
+      .identity {
+        min-height: 280px;
+      }
+
+      .project,
+      .project.featured {
+        grid-column: span 6;
+      }
+
+      .contribution-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .hud {
+        grid-template-columns: 1fr auto;
+        min-height: 74px;
+      }
+
+      .player-tag { display: none; }
+
+      .hero {
+        gap: 24px;
+        padding: 38px 0 36px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 17vw, 78px);
+      }
+
+      .role-line { font-size: 16px; }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .action {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .profile-card {
+        min-height: 270px;
+      }
+
+      .profile-stats {
+        left: 16px;
+        bottom: 16px;
+        width: 152px;
+        gap: 6px;
+      }
+
+      .profile-stat {
+        min-height: 52px;
+        padding: 7px;
+      }
+
+      .profile-stat strong {
+        font-size: 19px;
+      }
+
+      .avatar {
+        right: 12px;
+        width: 205px;
+        height: 260px;
+      }
+
+      .level {
+        font-size: 68px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .stack-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-copy,
+      .education-card,
+      .stack-card,
+      .project,
+      .project.featured {
+        grid-column: span 1;
+      }
+
+      .project-preview,
+      .project.featured .project-preview {
+        height: 112px;
+      }
+
+      .project.featured .preview-shell {
+        height: 76px;
+      }
+
+      .project-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-link {
+        justify-content: center;
+      }
+
+      .project,
+      .project.featured {
+        grid-column: span 1;
+      }
+
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aditya Singh Chauhan",
+      "url": "https://github.com/Aditya16703",
+      "image": "https://avatars.githubusercontent.com/u/153709294?v=4",
+      "jobTitle": "Frontend and Full-Stack Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Noida",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://github.com/Aditya16703",
+        "https://www.linkedin.com/in/aditya-singh-chauhan-68a44230a/"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <header class="hud" aria-label="Profile status">
+      <div class="status"><span class="status-dot"></span> Available for work</div>
+      <div class="player-tag">PLAYER / 16703</div>
+      <nav class="nav-links" aria-label="Portfolio sections">
+        <a href="#about-heading">About</a>
+        <a href="#stack-heading">Stack</a>
+        <a href="#projects-heading">Work</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="identity">
+          <p class="eyebrow">Developer profile / 001</p>
+          <h1>Aditya <span class="outline">Chauhan</span></h1>
+          <p class="role-line">
+            I build <strong>scalable, high-performance web applications</strong> with a focus on frontend engineering and real-world problem solving.
+          </p>
+          <p class="intro-stack">
+            Final-year B.Tech · CSE (AI & ML) · React / Next.js / TypeScript · MERN
+          </p>
+          <div class="actions">
+            <a class="action primary" href="mailto:ac3413452@gmail.com">Start a mission ↗</a>
+            <a class="action" href="https://github.com/Aditya16703" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+            <a class="action linkedin" href="https://www.linkedin.com/in/aditya-singh-chauhan-68a44230a/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="GitHub player card">
+          <div class="profile-grid"></div>
+          <div class="level-block">
+            <span class="level-label">Developer rank</span>
+            <span class="level">FSTK</span>
+          </div>
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/153709294?v=4" alt="Aditya Singh Chauhan" onerror="this.style.display='none'">
+          <div class="profile-stats">
+            <div class="profile-stat"><strong>11</strong><span>Public repositories</span></div>
+            <div class="profile-stat"><strong>AI</strong><span>CSE specialization</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section aria-labelledby="about-heading">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="about-heading">About <span>player</span></h2>
+          <span class="section-index">PROFILE / DATA</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I’m a <strong>frontend and full-stack developer</strong> focused on building scalable, responsive applications that solve practical problems. My work combines React.js, Next.js, TypeScript, and the MERN stack with authentication, real-time communication, API integrations, and AI-enabled workflows.
+            </p>
+          </div>
+          <aside class="education-card reveal">
+            <span class="data-label">Current objective</span>
+            <h3>B.Tech · CSE AI & ML</h3>
+            <p>Final-year engineering student. Open to Frontend and Full-Stack Development opportunities.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section aria-labelledby="stack-heading">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="stack-heading">Core <span>loadout</span></h2>
+          <span class="section-index">SKILL / MATRIX</span>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <h3>Frontend</h3>
+            <p>React.js · Next.js · TypeScript · Tailwind CSS · Zustand · Framer Motion</p>
+          </div>
+          <div class="stack-card reveal">
+            <h3>Backend</h3>
+            <p>Node.js · Express.js · FastAPI · WebSockets · REST APIs · JWT</p>
+          </div>
+          <div class="stack-card reveal">
+            <h3>Data</h3>
+            <p>MongoDB · PostgreSQL · API integrations · Data modeling</p>
+          </div>
+          <div class="stack-card reveal">
+            <h3>Foundation</h3>
+            <p>Java · DSA · DBMS · Operating Systems · Networks · Git · Docker</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="contributions-heading">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="contributions-heading">GitHub <span>evidence</span></h2>
+          <span class="section-index">ACTIVITY / PUBLIC</span>
+        </div>
+        <div class="contribution-grid">
+          <div class="contribution-card reveal">
+            <img src="https://ghchart.rshah.org/c8ff3d/Aditya16703" alt="Aditya's GitHub contribution activity" loading="lazy">
+          </div>
+          <aside class="github-card reveal">
+            <div>
+              <strong>11</strong>
+              <p>Public repositories spanning fintech, AI, knowledge management, social impact, and data analysis.</p>
+            </div>
+            <a class="project-link" href="https://github.com/Aditya16703" target="_blank" rel="noreferrer">View GitHub profile ↗</a>
+          </aside>
+        </div>
+      </section>
+
+      <section aria-labelledby="projects-heading">
+        <div class="section-head">
+          <h2 class="section-title" id="projects-heading">Selected <span>missions</span></h2>
+          <span class="section-index">05 / DEPLOYED</span>
+        </div>
+
+        <div class="projects">
+          <article class="project featured reveal">
+            <div class="project-preview" aria-label="CredenceOS interface preview"><div class="preview-shell"></div></div>
+            <div class="project-top">
+              <span class="project-code">Mission 001 · Fintech</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div>
+              <h2>CredenceOS</h2>
+              <p>Enterprise NBFC lending platform covering underwriting, collections, repayments, and financial audit workflows.</p>
+              <div class="project-meta">
+                <span class="tag">Full-stack</span>
+                <span class="tag">Lending</span>
+                <span class="tag">Audit-ready</span>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary" href="https://credence-os.vercel.app" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="project-link" href="https://github.com/Aditya16703/CredenceOS-" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-preview" aria-label="SmartTutorAI interface preview"><div class="preview-shell"></div></div>
+            <div class="project-top">
+              <span class="project-code">Mission 002 · AI</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div>
+              <h2>SmartTutorAI</h2>
+              <p>Agentic learning platform with hybrid RAG, live streaming, and AI-powered mastery.</p>
+              <div class="project-meta">
+                <span class="tag">TypeScript</span>
+                <span class="tag">RAG</span>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary" href="https://smart-tutor-ai-tan.vercel.app" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="project-link" href="https://github.com/Aditya16703/SmartTutorAI" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-preview" aria-label="GutBrain interface preview"><div class="preview-shell"></div></div>
+            <div class="project-top">
+              <span class="project-code">Mission 003 · SaaS</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div>
+              <h2>GutBrain</h2>
+              <p>A personal knowledge system for saving, organizing, and sharing content across the web.</p>
+              <div class="project-meta">
+                <span class="tag">MERN</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary" href="https://gutbrain.netlify.app" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="project-link" href="https://github.com/Aditya16703/GutBrain" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-preview" aria-label="Annadata interface preview"><div class="preview-shell"></div></div>
+            <div class="project-top">
+              <span class="project-code">Mission 004 · Impact</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div>
+              <h2>Annadata</h2>
+              <p>Role-based food donation platform connecting donors, food banks, and organizations.</p>
+              <div class="project-meta">
+                <span class="tag">MERN</span>
+                <span class="tag">Social good</span>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary" href="https://fooddonationwebsiteannadata.netlify.app" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="project-link" href="https://github.com/Aditya16703/Annadata-Food_Donation_Website" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project featured reveal">
+            <div class="project-preview" aria-label="FlowDesk interface preview"><div class="preview-shell"></div></div>
+            <div class="project-top">
+              <span class="project-code">Mission 005 · Productivity</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div>
+              <h2>FlowDesk</h2>
+              <p>Production-grade project management application with workspaces, issue tracking, RBAC, and real-time collaboration.</p>
+              <div class="project-meta">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Kanban</span>
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/Aditya16703/EtharaAiAssignment" target="_blank" rel="noreferrer">Repository ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Aditya Singh Chauhan · <strong>Open to opportunities</strong></span>
+      <span>GitHub / Aditya16703</span>
+    </footer>
+  </div>
+  <script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${Math.min(index * 90, 270)}ms`;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach((item) => observer.observe(item));
+    } else {
+      reveals.forEach((item) => item.classList.add('visible'));
+    }
+
+    if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+      const profile = document.querySelector('.profile-card');
+      profile.addEventListener('pointermove', (event) => {
+        const rect = profile.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        profile.style.setProperty('--mx', `${x * 100}%`);
+        profile.style.setProperty('--my', `${y * 100}%`);
+        profile.style.transform = `perspective(900px) rotateY(${(x - 0.5) * 5}deg) rotateX(${(0.5 - y) * 5}deg)`;
+      });
+      profile.addEventListener('pointerleave', () => {
+        profile.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg)';
+      });
+
+      document.querySelectorAll('.project').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          card.style.transform = `perspective(900px) translateY(-6px) rotateY(${(x - 0.5) * 2.8}deg) rotateX(${(0.5 - y) * 2.8}deg)`;
+        });
+        card.addEventListener('pointerleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
