@@ -45,7 +45,8 @@ Currently in my final year of **B.Tech (CSE - AI & ML)**, I work across **React.
 
 **Frontend:** React.js · Next.js · TypeScript · JavaScript · Tailwind CSS · Zustand · Framer Motion  
 **Backend:** Node.js · Express.js · WebSockets · FastAPI · REST APIs · JWT  
-**Data & Tools:** MongoDB · PostgreSQL · Docker · Git  
+**Data & Caching:** MongoDB · PostgreSQL · Redis · API integrations · Data modeling  
+**Tools:** Docker · Git  
 **Core CS:** DBMS · Operating Systems · Computer Networks · OOP · Data Structures & Algorithms
 
 ## 🚀 Run Locally
